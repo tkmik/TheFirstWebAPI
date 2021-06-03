@@ -18,12 +18,6 @@ namespace WebAPILibrary.Services
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
         }
-
-        public IEnumerable<User> GetUsers()
-        {
-            return _dbContext.Users;
-        }
-
         public async Task<IEnumerable<User>> GetUsersAsync()
         {
             return await _dbContext.Users.ToListAsync();

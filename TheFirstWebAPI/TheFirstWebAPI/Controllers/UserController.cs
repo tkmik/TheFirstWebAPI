@@ -24,9 +24,9 @@ namespace TheFirstWebAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            var usersDTO = _mapper.Map<IEnumerable<User>, IEnumerable<UserDTO>>(_userService.GetUsers());
+            var usersDTO = _mapper.Map<IEnumerable<User>, IEnumerable<UserDTO>>(await _userService.GetUsersAsync());
 
             //User user = new User();
             //var userDTO = _mapper.Map<UserDTO>(user);

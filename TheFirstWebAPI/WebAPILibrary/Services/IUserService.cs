@@ -9,7 +9,6 @@ namespace WebAPILibrary.Services
 {
     public interface IUserService
     {
-        IEnumerable<User> GetUsers();
         Task<IEnumerable<User>> GetUsersAsync();
         Task AddUserAsync(User user);
     }
